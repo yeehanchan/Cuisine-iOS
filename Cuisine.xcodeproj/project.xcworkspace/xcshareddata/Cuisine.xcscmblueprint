@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "0454BC8FFF272BD3B99DCC2EFEDFA53D9D5FBB72",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "BD3D46E15BC6BB63B87F817FF0DE0298DF745682" : 0,
+    "0454BC8FFF272BD3B99DCC2EFEDFA53D9D5FBB72" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "B261ED47-733D-40E6-AA24-F8D8123C9789",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "BD3D46E15BC6BB63B87F817FF0DE0298DF745682" : "",
+    "0454BC8FFF272BD3B99DCC2EFEDFA53D9D5FBB72" : "ios\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Cuisine",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Cuisine.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/yeehanchan\/Cuisine-iOS.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "0454BC8FFF272BD3B99DCC2EFEDFA53D9D5FBB72"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/AndyLiu0429\/cuisine.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "BD3D46E15BC6BB63B87F817FF0DE0298DF745682"
+    }
+  ]
+}

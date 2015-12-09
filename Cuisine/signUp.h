@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface signUp : UIViewController <NSURLConnectionDelegate>
+@interface signUp : UIViewController <NSURLConnectionDelegate,UITextFieldDelegate>
 {
     NSMutableData * responseData;
     NSURLProtectionSpace *loginProtectionSpace;

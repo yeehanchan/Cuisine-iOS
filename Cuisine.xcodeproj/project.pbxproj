@@ -10,6 +10,7 @@
 		082409231BFD1D4200535E97 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 082409221BFD1D4200535E97 /* CoreLocation.framework */; };
 		082CCC0E1BBE442B00019D90 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 082CCC0D1BBE442B00019D90 /* MapKit.framework */; };
 		082EE3B51C15EAD40016966F /* favViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 082EE3B41C15EAD40016966F /* favViewController.m */; };
+		082EE3D01C18C0A50016966F /* testAuthenticate.m in Sources */ = {isa = PBXBuildFile; fileRef = 082EE3CF1C18C0A50016966F /* testAuthenticate.m */; };
 		08B2C8941BD8253F00055413 /* mapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 08B2C8931BD8253F00055413 /* mapViewController.m */; };
 		08B4AE691BDCB65300725B38 /* signUp.m in Sources */ = {isa = PBXBuildFile; fileRef = 08B4AE681BDCB65300725B38 /* signUp.m */; };
 		08C9921D1BC5B304005DC9A7 /* detailPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 08C9921C1BC5B304005DC9A7 /* detailPage.m */; };
@@ -25,11 +26,32 @@
 		3023091D1BDD6E9A0045CB98 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 302309161BDD6E9A0045CB98 /* AppDelegate.m */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		082EE3C21C18BFFE0016966F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 08D10A391BBC755100F6A8F3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 08D10A401BBC755100F6A8F3;
+			remoteInfo = Cuisine;
+		};
+		082EE3D21C18C0A50016966F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 08D10A391BBC755100F6A8F3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 08D10A401BBC755100F6A8F3;
+			remoteInfo = Cuisine;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		082409221BFD1D4200535E97 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		082CCC0D1BBE442B00019D90 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		082EE3B31C15EAD40016966F /* favViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = favViewController.h; sourceTree = "<group>"; };
 		082EE3B41C15EAD40016966F /* favViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = favViewController.m; sourceTree = "<group>"; };
+		082EE3BD1C18BFFE0016966F /* CuisineTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CuisineTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		082EE3CD1C18C0A50016966F /* testAuthenticate.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = testAuthenticate.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		082EE3CF1C18C0A50016966F /* testAuthenticate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = testAuthenticate.m; sourceTree = "<group>"; };
+		082EE3D11C18C0A50016966F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		08B2C8921BD8253F00055413 /* mapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mapViewController.h; sourceTree = "<group>"; };
 		08B2C8931BD8253F00055413 /* mapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mapViewController.m; sourceTree = "<group>"; };
 		08B4AE671BDCB65300725B38 /* signUp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = signUp.h; sourceTree = "<group>"; };
@@ -56,6 +78,20 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		082EE3BA1C18BFFE0016966F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		082EE3CA1C18C0A50016966F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		08D10A3E1BBC755100F6A8F3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -69,6 +105,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		082EE3CE1C18C0A50016966F /* testAuthenticate */ = {
+			isa = PBXGroup;
+			children = (
+				082EE3CF1C18C0A50016966F /* testAuthenticate.m */,
+				082EE3D11C18C0A50016966F /* Info.plist */,
+			);
+			path = testAuthenticate;
+			sourceTree = "<group>";
+		};
 		084025631C0412BC00A925CE /* lib */ = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				08D10A431BBC755100F6A8F3 /* Cuisine */,
+				082EE3CE1C18C0A50016966F /* testAuthenticate */,
 				08D10A421BBC755100F6A8F3 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -91,6 +137,8 @@
 			isa = PBXGroup;
 			children = (
 				08D10A411BBC755100F6A8F3 /* Cuisine.app */,
+				082EE3BD1C18BFFE0016966F /* CuisineTests.xctest */,
+				082EE3CD1C18C0A50016966F /* testAuthenticate.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -137,6 +185,42 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		082EE3BC1C18BFFE0016966F /* CuisineTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 082EE3C41C18BFFE0016966F /* Build configuration list for PBXNativeTarget "CuisineTests" */;
+			buildPhases = (
+				082EE3B91C18BFFE0016966F /* Sources */,
+				082EE3BA1C18BFFE0016966F /* Frameworks */,
+				082EE3BB1C18BFFE0016966F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				082EE3C31C18BFFE0016966F /* PBXTargetDependency */,
+			);
+			name = CuisineTests;
+			productName = CuisineTests;
+			productReference = 082EE3BD1C18BFFE0016966F /* CuisineTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		082EE3CC1C18C0A50016966F /* testAuthenticate */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 082EE3D41C18C0A50016966F /* Build configuration list for PBXNativeTarget "testAuthenticate" */;
+			buildPhases = (
+				082EE3C91C18C0A50016966F /* Sources */,
+				082EE3CA1C18C0A50016966F /* Frameworks */,
+				082EE3CB1C18C0A50016966F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				082EE3D31C18C0A50016966F /* PBXTargetDependency */,
+			);
+			name = testAuthenticate;
+			productName = testAuthenticate;
+			productReference = 082EE3CD1C18C0A50016966F /* testAuthenticate.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		08D10A401BBC755100F6A8F3 /* Cuisine */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 08D10A581BBC755100F6A8F3 /* Build configuration list for PBXNativeTarget "Cuisine" */;
@@ -163,6 +247,16 @@
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Yeehan Chan";
 				TargetAttributes = {
+					082EE3BC1C18BFFE0016966F = {
+						CreatedOnToolsVersion = 7.1.1;
+						DevelopmentTeam = 5754Z4QKXM;
+						TestTargetID = 08D10A401BBC755100F6A8F3;
+					};
+					082EE3CC1C18C0A50016966F = {
+						CreatedOnToolsVersion = 7.1.1;
+						DevelopmentTeam = 5754Z4QKXM;
+						TestTargetID = 08D10A401BBC755100F6A8F3;
+					};
 					08D10A401BBC755100F6A8F3 = {
 						CreatedOnToolsVersion = 7.0;
 						DevelopmentTeam = 5754Z4QKXM;
@@ -183,11 +277,27 @@
 			projectRoot = "";
 			targets = (
 				08D10A401BBC755100F6A8F3 /* Cuisine */,
+				082EE3BC1C18BFFE0016966F /* CuisineTests */,
+				082EE3CC1C18C0A50016966F /* testAuthenticate */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		082EE3BB1C18BFFE0016966F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		082EE3CB1C18C0A50016966F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		08D10A3F1BBC755100F6A8F3 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -201,6 +311,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		082EE3B91C18BFFE0016966F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		082EE3C91C18C0A50016966F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				082EE3D01C18C0A50016966F /* testAuthenticate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		08D10A3D1BBC755100F6A8F3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -219,6 +344,19 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		082EE3C31C18BFFE0016966F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 08D10A401BBC755100F6A8F3 /* Cuisine */;
+			targetProxy = 082EE3C21C18BFFE0016966F /* PBXContainerItemProxy */;
+		};
+		082EE3D31C18C0A50016966F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 08D10A401BBC755100F6A8F3 /* Cuisine */;
+			targetProxy = 082EE3D21C18C0A50016966F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		08D10A4D1BBC755100F6A8F3 /* Main.storyboard */ = {
@@ -240,6 +378,58 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		082EE3C51C18BFFE0016966F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = CuisineTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "cs-2408.CuisineTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Cuisine.app/Cuisine";
+			};
+			name = Debug;
+		};
+		082EE3C61C18BFFE0016966F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = CuisineTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "cs-2408.CuisineTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Cuisine.app/Cuisine";
+			};
+			name = Release;
+		};
+		082EE3D51C18C0A50016966F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = testAuthenticate/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "cs-2408.testAuthenticate";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Cuisine.app/Cuisine";
+			};
+			name = Debug;
+		};
+		082EE3D61C18C0A50016966F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = testAuthenticate/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "cs-2408.testAuthenticate";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Cuisine.app/Cuisine";
+			};
+			name = Release;
+		};
 		08D10A561BBC755100F6A8F3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -326,6 +516,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
 				INFOPLIST_FILE = Cuisine/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "cs-2408.Cuisine";
@@ -340,6 +535,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
 				INFOPLIST_FILE = Cuisine/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "cs-2408.Cuisine";
@@ -351,6 +551,22 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		082EE3C41C18BFFE0016966F /* Build configuration list for PBXNativeTarget "CuisineTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				082EE3C51C18BFFE0016966F /* Debug */,
+				082EE3C61C18BFFE0016966F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		082EE3D41C18C0A50016966F /* Build configuration list for PBXNativeTarget "testAuthenticate" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				082EE3D51C18C0A50016966F /* Debug */,
+				082EE3D61C18C0A50016966F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		08D10A3C1BBC755100F6A8F3 /* Build configuration list for PBXProject "Cuisine" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

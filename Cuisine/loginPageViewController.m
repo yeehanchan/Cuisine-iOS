@@ -24,7 +24,6 @@ int loginFlag = 0;
     //default login
     NSLog(@"login view did load");
     
-    
     UIScreen *screen = [UIScreen mainScreen];
     UIImage *img = [UIImage imageNamed:@"cover.png"];
     UIImageView *bgimg = [[UIImageView alloc]initWithFrame:CGRectMake(-200,0,screen.bounds.size.height*img.size.width/img.size.height, screen.bounds.size.height)];
@@ -54,6 +53,7 @@ int loginFlag = 0;
     self.password.backgroundColor = [UIColor grayColor];
     self.password.alpha = 0.7;
     self.password.secureTextEntry = YES;
+    self.password.delegate = self;
     
     UIButton *login= [[UIButton alloc]initWithFrame:CGRectMake(mask.frame.origin.x+40, mask.frame.origin.y+160, mask.frame.size.width-80, 50)];
     [[login layer]setBorderWidth:2.0];
@@ -79,23 +79,19 @@ int loginFlag = 0;
     [self.view addSubview:title];
     [self.view addSubview:signup];
     
+    [self.view endEditing:YES];
+    
 }
 - (void)loginPressed{
     //create the request
 
-    extern NSString *urlString;
-    url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/authenticate",urlString]];
-    loginProtectionSpace = [[NSURLProtectionSpace alloc]initWithHost:url.host port:[url.port integerValue] protocol:url.scheme realm:nil authenticationMethod:NSURLAuthenticationMethodHTTPDigest];
-    
-    credential = [NSURLCredential credentialWithUser:self.username.text password:self.password.text persistence:NSURLCredentialPersistencePermanent];
-    NSLog(@"credential%@",credential);
-    
-    [[NSURLCredentialStorage sharedCredentialStorage] setCredential:credential forProtectionSpace:loginProtectionSpace];
-/**
+    /**
     NSMutableURLRequest * request = [NSMutableURLRequest requestWithURL:url];
     NSURLConnection *conn = [[NSURLConnection alloc] initWithRequest:request delegate:self];
 **/
-
+    NSLog(@"login pressed");
+    extern NSString *urlString;
+    url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/authenticate",urlString]];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
     request.HTTPMethod=@"POST";
     [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
@@ -108,6 +104,24 @@ int loginFlag = 0;
     [request setHTTPBody:postdata];
     NSURLConnection *conn = [[NSURLConnection alloc] initWithRequest:request delegate:self];
 }
+-(void)loginTestUser:(NSString *)username andpassword:(NSString*)password{
+    NSLog(@"login pressed");
+    extern NSString *urlString;
+    url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/authenticate",urlString]];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+    request.HTTPMethod=@"POST";
+    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    NSDictionary *tmp = [[NSDictionary alloc] initWithObjectsAndKeys:
+                         username, @"user_name",
+                         password, @"password",
+                         nil];
+    NSError *error;
+    NSData *postdata = [NSJSONSerialization dataWithJSONObject:tmp options:0 error:&error];
+    [request setHTTPBody:postdata];
+    NSURLConnection *conn = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+    
+}
+
 -(void)goSignUp{
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     signUp *signuppage = [sb instantiateViewControllerWithIdentifier:@"signup"];
@@ -150,6 +164,14 @@ int loginFlag = 0;
 
    if([logindata objectForKey:@"type"] == @(YES)){
        //if login successfully
+       
+       loginProtectionSpace = [[NSURLProtectionSpace alloc]initWithHost:url.host port:[url.port integerValue] protocol:url.scheme realm:nil authenticationMethod:NSURLAuthenticationMethodHTTPDigest];
+       
+       credential = [NSURLCredential credentialWithUser:self.username.text password:self.password.text persistence:NSURLCredentialPersistencePermanent];
+       NSLog(@"credential%@",credential);
+       
+       [[NSURLCredentialStorage sharedCredentialStorage] setCredential:credential forProtectionSpace:loginProtectionSpace];
+
        [[NSUserDefaults standardUserDefaults] setObject:[logindata_data objectForKey:@"id"] forKey:@"user_id"];
        [[NSUserDefaults standardUserDefaults] synchronize];
         UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
@@ -196,4 +218,16 @@ int loginFlag = 0;
     NSLog(@"challenge!");
     //some code here, continue reading to find out what comes here
 }
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField
+{
+    return YES;
+}
+
+// It is important for you to hide the keyboard
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    return YES;
+}
+
 @end

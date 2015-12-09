@@ -16,16 +16,16 @@
 @implementation favViewController
 
 -(void)viewWillAppear:(BOOL)animated{
+    if([[NSUserDefaults standardUserDefaults]objectForKey:@"user_id"]!= nil){
+        extern NSString *urlString;
+        NSString *getString = [NSString stringWithFormat:@"%@/favorite?user_id=%@",urlString,[[NSUserDefaults standardUserDefaults]objectForKey:@"user_id"]];
+        NSLog(@"fetch favorite %@",[[NSUserDefaults standardUserDefaults]objectForKey:@"user_id"]);
+        NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:getString]];
+        request.HTTPMethod=@"GET";
+        NSError *error;
     
-    [self.tableView setAllowsSelection:YES];
-    extern NSString *urlString;
-    NSString *getString = [NSString stringWithFormat:@"%@/favorite?user_id=%@",urlString,[[NSUserDefaults standardUserDefaults]objectForKey:@"user_id"]];
-    NSLog(@"fetch favorite %@",[[NSUserDefaults standardUserDefaults]objectForKey:@"user_id"]);
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:getString]];
-    request.HTTPMethod=@"GET";
-    NSError *error;
-    
-    NSURLConnection *conn = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+        NSURLConnection *conn = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+    }
 }
 -(void)viewDidLoad{
     NSLog(@"view did load");
@@ -140,7 +140,7 @@
 //    NSLog(@"%@",responseData);
 
     NSMutableDictionary *result = [[NSJSONSerialization JSONObjectWithData:responseData options:kNilOptions error:&error]objectForKey:@"data"];
-//    NSLog(@"result is %@",result);
+    NSLog(@"result is %@",result);
     json_str = [[NSMutableArray alloc]init];
     for(NSDictionary *dic in result){
         NSData * json_data = [[dic objectForKey:@"json_str"] dataUsingEncoding:NSUTF8StringEncoding];

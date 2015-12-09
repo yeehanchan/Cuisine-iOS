@@ -179,7 +179,7 @@ self.searchBar.text];
         [detail populateFoodInfo:result[indexPath.row]];
     }
     NSLog(@"print bar height%f",self.navigationController.navigationBar.frame.size.height);
-    [self.navigationController pushViewController:detail animated:NO];
+    [self.navigationController pushViewController:detail animated:YES];
     
     
     /**    //Here is a demonstration of using NSUserDefaults for persistent storage.

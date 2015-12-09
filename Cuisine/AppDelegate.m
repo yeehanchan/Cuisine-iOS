@@ -46,8 +46,13 @@
         loginPageViewController *login = [[loginPageViewController alloc]init];
         initialView = login;
     }
-    self.window.rootViewController = initialView;
-    
+    [UIView transitionWithView:self.window
+                      duration:0.5
+                       options:UIViewAnimationOptionTransitionFlipFromLeft
+                    animations:^{
+                        self.window.rootViewController = initialView;
+                    }
+                    completion:NULL];
     return YES;
 }
 

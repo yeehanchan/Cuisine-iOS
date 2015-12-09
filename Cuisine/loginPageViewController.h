@@ -8,11 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface loginPageViewController : UIViewController <NSURLConnectionDelegate>
+@interface loginPageViewController : UIViewController <NSURLConnectionDelegate,UITextFieldDelegate>
 {
     NSMutableData *responseData;
     NSURLProtectionSpace *loginProtectionSpace;
     NSURL *url;
     NSURLCredential *credential;
 }
+-(void)loginTestUser:(NSString *)username andpassword:(NSString*)password;
 @end

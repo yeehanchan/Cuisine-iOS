@@ -26,13 +26,13 @@
     UIImageView *bgimg = [[UIImageView alloc]initWithFrame:CGRectMake(-200,0,screen.bounds.size.height*img.size.width/img.size.height, screen.bounds.size.height)];
     bgimg.image = img;
     
-    UILabel *title = [[UILabel alloc]initWithFrame:CGRectMake(self.view.bounds.origin.x+20, self.view.bounds.origin.y+160, screen.bounds.size.width-40, 90)];
+    UILabel *title = [[UILabel alloc]initWithFrame:CGRectMake(self.view.bounds.origin.x+20, self.view.bounds.origin.y+100, screen.bounds.size.width-40, 90)];
     [title setText:@"CUISINE"];
     [title setTextColor:[UIColor whiteColor]];
     [title setTextAlignment:NSTextAlignmentCenter];
     [title setFont:[UIFont fontWithName:@"Chalkduster" size:70.0]];
     
-    UIView *mask = [[UIView alloc]initWithFrame:CGRectMake(self.view.bounds.origin.x+20, self.view.bounds.origin.y+260, screen.bounds.size.width-40, 350)];
+    UIView *mask = [[UIView alloc]initWithFrame:CGRectMake(self.view.bounds.origin.x+20, self.view.bounds.origin.y+200, screen.bounds.size.width-40, 350)];
     mask.backgroundColor = [UIColor whiteColor];
     mask.alpha = 0.7;
     
@@ -58,6 +58,7 @@
     self.passwordConfirm.backgroundColor = [UIColor grayColor];
     self.passwordConfirm.alpha = 0.7;
     self.passwordConfirm.secureTextEntry = YES;
+
     
     self.email = [[UITextField alloc]initWithFrame:CGRectMake(mask.frame.origin.x+20, mask.frame.origin.y+220, mask.frame.size.width-40, 40)];
     self.email.placeholder = @"email";
@@ -65,6 +66,7 @@
     self.email.textColor = [UIColor whiteColor];
     self.email.backgroundColor = [UIColor grayColor];
     self.email.alpha = 0.7;
+    self.email.delegate = self;
     
     UIButton *signUp= [[UIButton alloc]initWithFrame:CGRectMake(mask.frame.origin.x+40, mask.frame.origin.y+280, mask.frame.size.width-80, 50)];
     [[signUp layer]setBorderWidth:2.0];
@@ -144,9 +146,12 @@
     
     [responseData appendData:data];
     NSError *error = nil;
-    NSMutableDictionary *json = [NSJSONSerialization JSONObjectWithData:responseData options:kNilOptions error:&error];
-    NSLog(@"%@",json);
-    if([json objectForKey:@"type"] == @(YES)){
+    NSMutableDictionary *signupData = [NSJSONSerialization JSONObjectWithData:responseData options:kNilOptions error:&error];
+    NSLog(@"signup response%@",signupData);
+    
+    NSDictionary *signupData_data = [signupData objectForKey:@"data"];
+    if([signupData objectForKey:@"type"] == @(YES)){
+        
         extern NSString *urlString;
         url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/authenticate",urlString]];
         loginProtectionSpace = [[NSURLProtectionSpace alloc]initWithHost:url.host port:[url.port integerValue] protocol:url.scheme realm:nil authenticationMethod:NSURLAuthenticationMethodHTTPDigest];
@@ -154,13 +159,16 @@
         credential = [NSURLCredential credentialWithUser:self.username.text password:self.password.text persistence:NSURLCredentialPersistencePermanent];
         
         [[NSURLCredentialStorage sharedCredentialStorage] setCredential:credential forProtectionSpace:loginProtectionSpace];
+        
+        [[NSUserDefaults standardUserDefaults] setObject:[signupData_data objectForKey:@"id"] forKey:@"user_id"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
 
         UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         UITabBarController *tabBar = [sb instantiateViewControllerWithIdentifier:@"tabBar"];
         [self presentViewController:tabBar animated:NO completion:nil];
     }else{
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Sign Up Error!"
-                                                        message:[json objectForKey:@"data"]
+                                                        message:[signupData objectForKey:@"data"]
                                                        delegate:nil
                                               cancelButtonTitle:@"OK"
                                               otherButtonTitles:nil];
@@ -182,6 +190,17 @@
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
     // The request has failed for some reason!
     // Check the error var
+}
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField
+{
+    return YES;
+}
+
+// It is important for you to hide the keyboard
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    return YES;
 }
 
 @end
